@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonfire.dao.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.bonfire.pojo.User">
+        <id column="id" property="id"/>
+        <result column="truename" property="truename"/>
+        <result column="password" property="password"/>
+        <result column="nickname" property="nickname"/>
+        <result column="email" property="email"/>
+        <result column="mobile" property="mobile"/>
+        <result column="createtime" property="createtime"/>
+        <result column="lastlogintime" property="lastlogintime"/>
+        <result column="src" property="src"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * FROM `user`
+    </select>
+
+
+    <!--
+    <select id="selectUserById" parameterType="Integer" resultType="User">
+        select * from `user`
+        <where>
+            ID = #{id}
+        </where>
+    </select>
+
+    <update id="updateUserById" parameterType="User">
+        update `user`
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="password != null">
+                password = #{password}
+            </if>
+        </set>
+        <where>
+            ID = #{id}
+        </where>
+    </update>
+
+    <delete id="deleteUserById" parameterType="Integer">
+        delete from `user` where ID = #{id}
+    </delete>
+    -->
+</mapper>
