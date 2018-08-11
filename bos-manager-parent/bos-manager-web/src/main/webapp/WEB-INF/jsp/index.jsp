@@ -10,28 +10,29 @@
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<div class="table-responsive">
-    <table class="table table-striped table-sm">
-        <thead>
-        <tr>
-            <th>姓名</th>
-            <th>邮箱</th>
-            <th>创建时间</th>
-            <th>头像</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${list}" var="user">
+<div class = "container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
             <tr>
-                <td>user.truename</td>
-                <td>user.email</td>
-                <td>user.createtime</td>
-                <td>user.src</td>
+                <th>姓名</th>
+                <th>邮箱</th>
+                <th>创建时间</th>
+                <th>头像</th>
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <c:forEach items="${list}" var="user">
+                <tr>
+                    <td>${user.truename}</td>
+                    <td>${user.email}</td>
+                    <td>${user.createtime}</td>
+                    <td>${user.src}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>
